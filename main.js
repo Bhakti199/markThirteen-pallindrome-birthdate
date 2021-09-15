@@ -233,9 +233,9 @@ function reverseStr(str) {
         setTimeout(function (){
           
           if(counter > ctr){
-            resultMessage.innerText = `The nearest palindrome date is ${nextDate.day}-${nextDate.month}-${nextDate.year}, you missed it by ${ctr} days! 💔`;
+            resultMessage.innerText = `Your Birthdate is not palindrome. The nearest palindrome date is ${nextDate.day}-${nextDate.month}-${nextDate.year}, you missed it by ${ctr} days! 💔`;
           }else{
-            resultMessage.innerText = `The nearest palindrome date is ${previousDate.day}-${previousDate.month}-${previousDate.year}, you missed it by ${counter} days! 💔`;
+            resultMessage.innerText = `Your Birthdate is not palindrome. The nearest palindrome date is ${previousDate.day}-${previousDate.month}-${previousDate.year}, you missed it by ${counter} days! 💔`;
           }
        
         }, 3000);
