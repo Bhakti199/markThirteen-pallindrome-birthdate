@@ -21,26 +21,29 @@ function reverseStr(str) {
   function convertDateToStr(date) {
   
     var dateStr = { day: '', month: '', year: '' };
-  
-    if (date.day < 10) {
+   
+    if(date.day < 10) {
       dateStr.day = '0' + date.day;
     }
     else {
       dateStr.day = date.day.toString();
     }
   
-    if (date.month < 10) {
+    if(date.month < 10) {
       dateStr.month = '0' + date.month;
+      // console.log(date.month);
     }
     else {
       dateStr.month = date.month.toString();
     }
   
     dateStr.year = date.year.toString();
+  
     return dateStr;
   }
   
   function getAllDateFormats(date) {
+       
     var dateStr = convertDateToStr(date);
   
     var ddmmyyyy = dateStr.day + dateStr.month + dateStr.year;
@@ -165,8 +168,18 @@ function reverseStr(str) {
       }
       else {
         var [ctr, nextDate] = getNextPalindromeDate(date);
-       
-               resultMessage.innerText= "processing....";
+        
+        
+        if(nextDate.day < 10){
+            nextDate.day = nextDate.day.toString();
+            nextDate.day = '0' + nextDate.day;    
+          }
+            if(nextDate.month < 10){
+            nextDate.month = nextDate.month.toString();
+            nextDate.month = '0' + nextDate.month;    
+          }
+         
+        resultMessage.innerText= "processing....";
         setTimeout(function (){
             resultMessage.innerText = `Your Birthdate is not palindrome. The next palindrome date is ${nextDate.day}-${nextDate.month}-${nextDate.year}, you missed it by ${ctr} days! 💔`;
     
